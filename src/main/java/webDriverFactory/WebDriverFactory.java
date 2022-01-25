@@ -1,5 +1,6 @@
 package webDriverFactory;
 /**
+ * @author Садыков Александр
  * WebDriverFactory without(with) options
  */
 

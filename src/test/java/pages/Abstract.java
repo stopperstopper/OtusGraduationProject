@@ -1,6 +1,6 @@
 package pages;
 /**
- *Автор Садыков Александр
+ *@author Садыков Александр
  * Класс создания драйвера для PageObject
  */
 import org.openqa.selenium.WebDriver;

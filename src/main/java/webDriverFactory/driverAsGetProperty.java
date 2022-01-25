@@ -1,5 +1,6 @@
 package webDriverFactory;
 /**
+ * @author Садыков Александр
  * Список браузеров если запущен с параметром -Dbrowser
  */
 import io.github.bonigarcia.wdm.WebDriverManager;

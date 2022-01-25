@@ -1,6 +1,7 @@
 package webDriverFactory;
 
 /**
+ * @author Садыков Александр
  * Список браузеров
  */
 
