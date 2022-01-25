@@ -45,14 +45,11 @@ public class CheckerFieldAssertTest  {
             driver = WebDriverFactory.createDriver(Browsers.CHROME);}
            else {
                 driver = driverAsGetProperty.getBrowser();
-
+             //        ChromeOptions chOptions = new ChromeOptions();
+            //        chOptions.addArguments("start-maximized");
         }
 
 
-
-
-        //        ChromeOptions chOptions = new ChromeOptions();
-        //        chOptions.addArguments("start-maximized");
         loginPage = new LoginPage(driver);
         LCPage = new LCPages(driver);
         assertCheckerField= new AssertCheckerField(driver);
@@ -78,8 +75,10 @@ public class CheckerFieldAssertTest  {
     public void fillTest() throws InterruptedException {
        //заходим в ЛК
         loginPage.allMethodLogin();
+        logger.info("Вход в ЛК");
         //очищаем поля
         LCPage.clearField();
+        logger.info("очищаем поля");
         //Заполняем поля+SaveContinue
         LCPage.fillField();
         LCPage.btnSaveContinueClick();
@@ -93,6 +92,7 @@ public class CheckerFieldAssertTest  {
     public void assertTest() throws InterruptedException {
         //заходим в ЛК
         loginPage.allMethodLogin();
+        logger.info("Вход в ЛК");
         // проверка значений
 
         try {
