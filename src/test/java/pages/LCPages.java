@@ -63,7 +63,7 @@ public class LCPages extends Abstract{
     public WebElement userLevelEnglish;
 
     //Поле Выбора способа связи
-    @FindBy(css=".input_straight-top-right.input_no-border-right.lk-cv-block__input_fake.lk-cv-block__input_select-fake.js-custom-select-presentation")
+    @FindBy(css = ".input_straight-top-right.input_no-border-right.lk-cv-block__input_fake.lk-cv-block__input_select-fake.js-custom-select-presentation")
     public WebElement userAnotherMessenger;
 
     //Поле ввода способа связи
