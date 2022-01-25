@@ -14,7 +14,9 @@ import pages.LCPages;
 import pages.LoginPage;
 import webDriverFactory.Browsers;
 import webDriverFactory.WebDriverFactory;
+import webDriverFactory.driverAsGetProperty;
 
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class CheckerFieldAssertTest  {
@@ -23,17 +25,32 @@ public class CheckerFieldAssertTest  {
     private static AssertCheckerField assertCheckerField;
     private static Logger logger = LogManager.getLogger(ConfProperties.class);
     private  WebDriver driver;
+      AssertionError assertionError = null;
+      public String browser;
 
-    AssertionError assertionError = null;
+
+
+
 
     /**
      * осуществление первоначальной настройки
      */
     @Before
     public  void setup(){
-        //создание экземпляра драйвера
+//проверяем если есть браузер в параметрах запуска? такооой большоой костыль
+        Properties p = System.getProperties();
+        browser = p.getProperty("browser");
 
-        driver =  WebDriverFactory.createDriver(Browsers.FIREFOX);
+        if (browser == null) {
+            driver = WebDriverFactory.createDriver(Browsers.CHROME);}
+           else {
+                driver = driverAsGetProperty.getBrowser();
+
+        }
+
+
+
+
         //        ChromeOptions chOptions = new ChromeOptions();
         //        chOptions.addArguments("start-maximized");
         loginPage = new LoginPage(driver);
