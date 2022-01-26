@@ -12,7 +12,7 @@ import org.openqa.selenium.opera.OperaDriver;
 
 import java.util.Properties;
 
-public class driverAsGetProperty {
+public class DriverAsGetProperty {
     //private  WebDriver driver;
     private static String browser;
 

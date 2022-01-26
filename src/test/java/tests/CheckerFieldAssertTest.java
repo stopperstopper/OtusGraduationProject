@@ -14,7 +14,7 @@ import pages.LCPages;
 import pages.LoginPage;
 import webDriverFactory.Browsers;
 import webDriverFactory.WebDriverFactory;
-import webDriverFactory.driverAsGetProperty;
+import webDriverFactory.DriverAsGetProperty;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +44,7 @@ public class CheckerFieldAssertTest  {
         if (browser == null) {
             driver = WebDriverFactory.createDriver(Browsers.CHROME);}
            else {
-                driver = driverAsGetProperty.getBrowser();
+                driver = DriverAsGetProperty.getBrowser();
              //        ChromeOptions chOptions = new ChromeOptions();
             //        chOptions.addArguments("start-maximized");
         }
