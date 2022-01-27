@@ -21,7 +21,7 @@ public class LCPages extends Abstract{
 
         super(driver);
         PageFactory.initElements(driver, this);
-        this.driver = driver;
+        //this.driver = driver;
     }
     /**
      * PObject

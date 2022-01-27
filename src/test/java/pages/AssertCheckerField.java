@@ -16,7 +16,8 @@ public class AssertCheckerField extends LCPages {
     public AssertCheckerField(WebDriver driver) {
       super(driver);
       PageFactory.initElements(driver, this);
-      this.driver = driver;}
+      //this.driver = driver;
+        }
 
 
     public void assertFields() {
