@@ -6,7 +6,9 @@ package webDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 
@@ -32,6 +34,12 @@ public class DriverAsGetProperty {
             case "OPERA":
                 WebDriverManager.operadriver().setup();
                 return new OperaDriver();
+            case "IE":
+                WebDriverManager.operadriver().setup();
+                return new InternetExplorerDriver();
+            case "EDGE":
+                WebDriverManager.operadriver().setup();
+                return new EdgeDriver();
             default:
                 WebDriverManager.chromedriver().setup();
                 return new ChromeDriver();

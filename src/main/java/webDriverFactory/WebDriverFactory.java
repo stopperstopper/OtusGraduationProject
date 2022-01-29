@@ -10,8 +10,12 @@ import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 
@@ -28,6 +32,12 @@ public class WebDriverFactory {
             case OPERA:
                 WebDriverManager.operadriver().setup();
                 return new OperaDriver();
+            case IE:
+                WebDriverManager.operadriver().setup();
+                return new InternetExplorerDriver();
+            case EDGE:
+                WebDriverManager.operadriver().setup();
+                return new EdgeDriver();
             default:
                 WebDriverManager.chromedriver().setup();
                 return new ChromeDriver();
@@ -45,7 +55,13 @@ public class WebDriverFactory {
             case OPERA:
                 WebDriverManager.operadriver().setup();
                 return new OperaDriver((OperaOptions) webDriverOptions);
-            default:
+            case IE:
+                WebDriverManager.iedriver().setup();
+                return new InternetExplorerDriver((InternetExplorerOptions) webDriverOptions);
+            case EDGE:
+                WebDriverManager.operadriver().setup();
+                return new EdgeDriver((EdgeOptions) webDriverOptions);
+                default:
                 WebDriverManager.chromedriver().setup();
                 return new ChromeDriver( (ChromeOptions) webDriverOptions);
         }

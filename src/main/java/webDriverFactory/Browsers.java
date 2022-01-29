@@ -8,5 +8,7 @@ package webDriverFactory;
 public enum Browsers {
     CHROME,
     FIREFOX,
-    OPERA
+    OPERA,
+    IE,
+    EDGE
 }

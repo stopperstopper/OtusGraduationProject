@@ -8,16 +8,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import tests.AbstractCloneWebDriver;
 import tests.ConfProperties;
 
-import static tests.CheckerFieldAssertTest.LCPage;
-import static tests.CheckerFieldAssertTest.loginPage;
 
 
-public class LoginPage extends Abstract {
+
+public class AuthOtus extends AbstractCloneWebDriver {
 
 //инициализация всех элементов на странице
-    public LoginPage(WebDriver driver) {
+    public AuthOtus(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
        // this.driver = driver;
@@ -62,15 +62,14 @@ public class LoginPage extends Abstract {
         btnEnterLC.click();
     }
     //Общий метод входа в ЛК
-   public void allMethodLogin() throws InterruptedException {
+   public void allMethodLogin()  {
        // Вход в ЛК
-       loginPage.clickBtnAuth();
+      clickBtnAuth();
        //вводим пароль
-       loginPage.inputLogin(ConfProperties.getProperty("login"));
-       loginPage.inputPasswd(ConfProperties.getProperty("password"));
+      inputLogin(ConfProperties.getProperty("login"));
+      inputPasswd(ConfProperties.getProperty("password"));
        //нажимаем кнопку входа
-       loginPage.clickBtnEnterLC();
-    // Вход в ЛК
-       LCPage.enterLc();
+      clickBtnEnterLC();
+
    }
 }
