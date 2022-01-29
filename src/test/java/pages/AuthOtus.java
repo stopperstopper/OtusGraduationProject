@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import tests.AbstractCloneWebDriver;
+import webDriverFactory.AbstractCloneWebDriver;
 import tests.ConfProperties;
 
 
@@ -20,7 +20,7 @@ public class AuthOtus extends AbstractCloneWebDriver {
     public AuthOtus(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-       // this.driver = driver;
+
     }
 
 

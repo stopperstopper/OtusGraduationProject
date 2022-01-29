@@ -1,14 +1,14 @@
 package pages;
 /**
  *@author Садыков Александр
- *  Page Object страницы Авторизации.
+ *  Page Object страницы headless.
  *  Методы для заполнения полей
  */
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import tests.AbstractCloneWebDriver;
+import webDriverFactory.AbstractCloneWebDriver;
 
 public class HeadlessFirstElement extends AbstractCloneWebDriver {
 

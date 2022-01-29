@@ -1,4 +1,4 @@
-package tests;
+package webDriverFactory;
 /**
  *@author Садыков Александр
  * Класс создания драйвера для PageObject
