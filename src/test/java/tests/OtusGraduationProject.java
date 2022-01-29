@@ -102,8 +102,8 @@ public class OtusGraduationProject {
         Thread.sleep(3000);
         loginPage.allMethodLogin();
         logger.info("Аутентификация в OTUS");
-        Set<Cookie> allcookies = driver.manage().getCookies();
-        logger.info(allcookies);
+       Set<Cookie> allcookies = driver.manage().getCookies();
+        logger.info("Cookies "+allcookies);
     }
 
 }
