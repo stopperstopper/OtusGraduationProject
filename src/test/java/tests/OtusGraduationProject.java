@@ -76,14 +76,12 @@ public class OtusGraduationProject {
         options.addArguments("--kiosk");
         driver = WebDriverFactory.createDriver(Browsers.CHROME, options);
         driver.get("https://demo.w3layouts.com/demos_new/template_demo/03-10-2020/photoflash-liberty-demo_Free/685659620/web/index.html?_ga=2.181802926.889871791.1632394818-2083132868.1632394818");
-       // PageFactory.initElements(driver, this);
-       // Thread.sleep(2000);
-       modalKiosk = new ModalKiosk(driver);
-     //   Thread.sleep(2000);
+              modalKiosk = new ModalKiosk(driver);
+        Thread.sleep(2000);
+
         //клик на 1 картинке
         modalKiosk.firstPicture.click();
        //проверяем открылось ли модальное окно
-        Thread.sleep(2000);
         Assert.assertTrue(modalKiosk.modalWindow.isEnabled());
         logger.info("Модальное окно");
 
