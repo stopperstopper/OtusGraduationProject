@@ -24,7 +24,7 @@ public class ModalKiosk extends AbstractCloneWebDriver {
     @FindBy(css = "body > section.w3-gallery.py-5 > div > ul.portfolio-area.clearfix.p-0.m-0 > li:nth-child(1)")
     public WebElement firstPicture;
     // 1-я картинка в модальном окне
-    @FindBy(css = "body > section.w3-gallery.py-5 > div > ul.portfolio-area.clearfix.p-0.m-0 > li:nth-child(1)")
+    @FindBy(css = "body > div.pp_pic_holder.light_rounded > div.pp_content_container > div > div > div > div.pp_fade > div.pp_hoverContainer")
     public WebElement modalWindow;
 
 
