@@ -31,4 +31,9 @@ public class HeadlessFirstElement extends AbstractCloneWebDriver {
     @FindBy(xpath = "//*[@id=\"r1-0\"]/div/h2/a[1]")
     public WebElement firstElement;
 
+public void firstElementSearch(){
+   searchField.clear();
+   searchField.sendKeys("ОТУС");
+   btnSearch.click();
+}
 }

@@ -17,13 +17,14 @@ import pages.ModalKiosk;
 import webDriverFactory.Browsers;
 import webDriverFactory.WebDriverFactory;
 
+import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
 public class OtusGraduationProject {
 
-    private static Logger logger = LogManager.getLogger(ConfProperties.class);
+    private static Logger logger = LogManager.getLogger(OtusGraduationProject.class);
     private WebDriver driver;
     public static AuthOtus loginPage;
     public static ModalKiosk modalKiosk;
@@ -32,8 +33,7 @@ public class OtusGraduationProject {
 
     @Before
     public  void setup(){
-
-        logger.info("-------------------Новый тест----------------------");
+           logger.info("-------------------Новый тест----------------------");
       }
 
     @After
@@ -57,11 +57,11 @@ public class OtusGraduationProject {
         driver = WebDriverFactory.createDriver(Browsers.CHROME, options);
         driver.get("https://duckduckgo.com/");
         headlessFirstElement = new HeadlessFirstElement(driver);
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         //Вводим ОТУС
-        headlessFirstElement.searchField.clear();
-        headlessFirstElement.searchField.sendKeys("ОТУС");
-        headlessFirstElement.btnSearch.click();
+        //headlessFirstElement.searchField.clear();
+        //headlessFirstElement.searchField.sendKeys("ОТУС");
+        headlessFirstElement.firstElementSearch();
         //Сравниваем значение
         Assert.assertEquals("Онлайн‑курсы для профессионалов, дистанционное обучение...", headlessFirstElement.firstElement.getText());
         logger.info("Headless");
@@ -77,7 +77,7 @@ public class OtusGraduationProject {
         driver = WebDriverFactory.createDriver(Browsers.CHROME, options);
         driver.get("https://demo.w3layouts.com/demos_new/template_demo/03-10-2020/photoflash-liberty-demo_Free/685659620/web/index.html?_ga=2.181802926.889871791.1632394818-2083132868.1632394818");
               modalKiosk = new ModalKiosk(driver);
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
         //клик на 1 картинке
         modalKiosk.firstPicture.click();
@@ -94,11 +94,12 @@ public class OtusGraduationProject {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = WebDriverFactory.createDriver(Browsers.CHROME, options);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
         driver.get("https://otus.ru");
         loginPage = new AuthOtus(driver);
         // Вход в ЛК
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        //Thread.sleep(3000);
         loginPage.allMethodLogin();
         logger.info("Аутентификация в OTUS");
        Set<Cookie> allcookies = driver.manage().getCookies();
