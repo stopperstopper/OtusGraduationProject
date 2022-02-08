@@ -58,9 +58,7 @@ public class OtusGraduationProject {
         driver.get("https://duckduckgo.com/");
         headlessFirstElement = new HeadlessFirstElement(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        //Вводим ОТУС
-        //headlessFirstElement.searchField.clear();
-        //headlessFirstElement.searchField.sendKeys("ОТУС");
+       //ищем 1 элемент
         headlessFirstElement.firstElementSearch();
         //Сравниваем значение
         Assert.assertEquals("Онлайн‑курсы для профессионалов, дистанционное обучение...", headlessFirstElement.firstElement.getText());
@@ -99,7 +97,6 @@ public class OtusGraduationProject {
         loginPage = new AuthOtus(driver);
         // Вход в ЛК
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        //Thread.sleep(3000);
         loginPage.allMethodLogin();
         logger.info("Аутентификация в OTUS");
        Set<Cookie> allcookies = driver.manage().getCookies();
